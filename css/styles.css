@@ -1,10 +1,4 @@
 
-/*Колір основного тексту #212121
-Колір параграфів контактів #757575
-колір лого #000000
-інтерактивний синій #2196F3
-Колір кнопок фільтра #F5F4FA
-адреса у футері rgba(255, 255, 255, 0.6) */
 :root{
 --primary-text-color: #212121;
 --text-color: #757575;
@@ -16,7 +10,6 @@
 --footer-bg-color: #2F303A;
 --footer-contacts-color: rgba(255, 255, 255, 0.6);
 --button-color: #F5F4FA;
-
 }
 body {
     background-color: var(--secondary-color);
@@ -24,13 +17,39 @@ body {
     font-family: roboto, sans-serif;
     font-weight: normal;
     letter-spacing: 0.03em;
+    width: 1600px;
 }
 ul{
     list-style: none;
+    padding-left: 0;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+h1, h2, h3, p{
+    margin-top: 0;
+    margin-bottom: 0;
+}
+.container {
+    width: 1200px;
+    margin: 0 auto;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+.section{
+    padding-top: 94px;
+    padding-bottom: 94px;
 }
 
 /* Головна сторінка*/
 /* Верхня лінія*/
+
+header {
+    border-bottom: 1px solid #ECECEC;
+}
+.main-nav{
+    display: flex;
+    align-items: center;
+}
 .logo{
     color: var(--logo-color);
     font-family: raleway, sans-serif;
@@ -42,7 +61,17 @@ ul{
 .logo span{
     color: var(--accent-color);
 }
+.site-nav{
+    display: flex;
+    margin-top: 32px;
+    margin-bottom: 32px;
+    margin-left: 50px;
+}
+.nav-item:not(:last-child){
+    margin-right: 50px;
+}
 .nav-link{
+    display: block;
     font-weight: 500;
     font-size: 14px;
     line-height: 1.14;
@@ -54,7 +83,17 @@ ul{
 .nav-link.current{
     color: var(--accent-color);
 }
+
+.contacts{
+    display: flex;
+    margin-left: auto;
+}
+
+.contacts-item:not(:last-child){
+    margin-right: 50px;
+}
 .contacts-link{
+    display: block;
     color: var(--text-color);
     text-decoration: none;
     font-weight: 500;
@@ -71,47 +110,95 @@ ul{
 .hero {
     color: var(--secondary-color);
     background-color: var(--hero-bg-color);
+    text-align: center;
 }
-.hero .title{
+.hero-title{
     font-weight: 900;
     font-size: 44px;
     line-height: 1.36;
-    text-align: center;
     letter-spacing: 0.06em;
     text-transform: uppercase;
+    margin-bottom: 30px;
 }
-.hero .button{
+.hero-button{
+    border: none;
+    border-radius: 4px;
+    padding: 10px 32px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
     color: var(--secondary-color);
     background-color: var(--accent-color);
     font-weight: 700;
     font-size: 16px;
     line-height: 1.88;
     letter-spacing: 0.06em;
+    text-decoration: none;
     cursor: pointer;
+    
 }
 
 /*особливості*/
-.specifics .title{
+
+.visually-hidden {
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    border: 0;
+    padding: 0;
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    margin: -1px;
+}
+.specifics-list{
+    display: flex;
+    flex-wrap: wrap;
+}
+.specifics-item{
+     width: 270px;
+     margin-right: 30px;
+}
+.specifics-item:nth-child(4n){
+    margin-right: 0;
+}
+.specifics-title{
     font-weight: 700;
     font-size: 14px;
     line-height: 1.14;
     text-transform: uppercase;
+    margin-bottom: 10px;
 }
-.specifics p{
+.specifics-text{
     color: var(--text-color);
     font-size: 14px;
     line-height: 1.71;
 }
 
 /*чим займаємось*/
-.work .title{
+
+.work.section{
+    padding-top: 0;
+}
+.work-title{
     font-weight: 700;
     font-size: 36px;
     line-height: 1.17;
     text-align: center;
+    margin-bottom: 50px;
+}
+.work-list{
+    display: flex;
+    flex-wrap: wrap;
+}
+.work-item{
+    margin-right: 30px;
+}
+.work-item:nth-child(3n){
+    margin-right: 0;
 }
 
 /*наша команда*/
+
 .team {
     background-color: var(--team-bg-color);
 }
@@ -120,27 +207,62 @@ ul{
     font-size: 36px;
     line-height: 1.17;
     text-align: center;
+    margin-bottom: 50px;
+}
+.team-list{
+    display: flex;
+    flex-wrap: wrap;
 }
 .team-item{
     background-color: var(--secondary-color);
+    margin-right: 30px;
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12),
+    0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
+    border-radius: 0px 0px 4px 4px;
 }
-.team .list-title{
+.team-img{
+    display: block;
+}
+.team-item:nth-child(4n){
+    margin-right: 0;
+}
+.list-title{
     font-weight: 500;
     font-size: 16px;
     line-height: 1.19;
     text-align: center;
+    margin-top: 30px;
+    margin-bottom: 10px;
 }
-.team p {
+.list-text {
     color: var(--text-color);
     font-size: 16px;
     line-height: 1.19;
     text-align: center;
+    margin-bottom: 30px;
 }
 
 /*Сторінка портфоліо*/
 
-
-.filter-list .button{
+.filter-list{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 50px;
+}
+.filter-item{
+    display: block;
+}
+.filter-item:not(:last-child){
+    margin-right: 8px;
+}
+.filter-button{
+    border: none;
+    padding: 6px 22px;
+    border-radius: 4px;
+    box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1),
+    0px 1px 2px rgba(0, 0, 0, 0.08),
+    0px 2px 2px rgba(0, 0, 0, 0.12);
     background-color: var(--button-color);
     color: var(--primary-color);
     font-weight: 500;
@@ -148,32 +270,65 @@ ul{
     line-height: 1.62;
     text-align: center;
     cursor: pointer;
+
 }
-.filter-list .button:hover{
+.filter-button:hover{
     background-color: var(--accent-color);
     color: var(--secondary-color);
 }
-.project-list .title{
+
+/*Список проєктів*/
+
+.project-list{
+    display: flex;
+    flex-wrap: wrap;
+}
+.project-item{
+    margin-right: 30px;
+    margin-bottom: 30px;
+}
+.project-item:nth-child(3n){
+    margin-right: 0;
+}
+.project-item:nth-last-child(-n+3){
+    margin-bottom: 0;
+}
+.project-img{
+    display: block;
+}
+.project-text-container {
+    width: 370px;
+    margin: 0 auto;
+    padding: 20px 24px;
+    border: 1px solid #EEEEEE;
+    border-top: 0;
+}
+.project-title{
     font-weight: 700;
     font-size: 18px;
     line-height: 2;
     letter-spacing: 0.06em;
 }
-.project-list p{
+.project-text{
     color: var(--text-color);
     font-size: 16px;
     line-height: 1.88;
 }
 
 /*підвал*/
+
 .footer {
     background-color: var(--footer-bg-color);
 }
 .footer .logo{
+    display: block;
     color: var(--secondary-color);
+    padding-top: 60px;
+    margin-bottom: 29px;
     }
 address{
     font-style: normal;
+    padding-bottom: 60px;
 }    
 .map-link {
     color: var(--secondary-color);
