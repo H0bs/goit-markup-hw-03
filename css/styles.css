@@ -10,34 +10,48 @@
 --footer-bg-color: #2F303A;
 --footer-contacts-color: rgba(255, 255, 255, 0.6);
 --button-color: #F5F4FA;
+--list-item-gap: 30px;
 }
 body {
     background-color: var(--secondary-color);
     color: var(--primary-text-color);
     font-family: roboto, sans-serif;
-    font-weight: normal;
+    font-size: 14px;
     letter-spacing: 0.03em;
-    width: 1600px;
 }
-ul{
+.container {
+    width: 1200px;
+    margin-right: auto;
+    margin-left: auto;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+.section{
+    padding: 94px 0;
+}
+h1, h2, h3, h4, h5, h6, p{
+    margin-top: 0;
+    margin-bottom: 0;
+}
+.list{
     list-style: none;
     padding-left: 0;
     margin-top: 0;
     margin-bottom: 0;
 }
-h1, h2, h3, p{
-    margin-top: 0;
-    margin-bottom: 0;
+.link{
+    text-decoration: none;
+    color: var(--primary-text-color);
 }
-.container {
-    width: 1200px;
-    margin: 0 auto;
-    padding-left: 15px;
-    padding-right: 15px;
+.link:hover,
+.link:focus,
+.link.current{
+    color: var(--accent-color);
 }
-.section{
-    padding-top: 94px;
-    padding-bottom: 94px;
+.img{
+    display: block;
+    max-width: 100%;
+    height: auto;
 }
 
 /* Головна сторінка*/
@@ -47,6 +61,10 @@ header {
     border-bottom: 1px solid #ECECEC;
 }
 .main-nav{
+    display: flex;
+
+}
+.nav {
     display: flex;
     align-items: center;
 }
@@ -64,46 +82,31 @@ header {
 .site-nav{
     display: flex;
     margin-top: 32px;
-    margin-bottom: 32px;
+    padding-bottom: 32px;
     margin-left: 50px;
 }
 .nav-item:not(:last-child){
     margin-right: 50px;
 }
 .nav-link{
-    display: block;
     font-weight: 500;
-    font-size: 14px;
     line-height: 1.14;
     letter-spacing: 0.02em;
-    text-decoration: none;
 }
-.nav-link:hover,
-.nav-link:focus,
-.nav-link.current{
-    color: var(--accent-color);
-}
-
 .contacts{
     display: flex;
     margin-left: auto;
+        align-items: center;
 }
 
 .contacts-item:not(:last-child){
     margin-right: 50px;
 }
 .contacts-link{
-    display: block;
     color: var(--text-color);
-    text-decoration: none;
     font-weight: 500;
-    font-size: 14px;
     line-height: 1.14;
     letter-spacing: 0.02em;
-}
-.contacts-link:hover,
-.contacts-link:focus{
-    color: var(--accent-color);
 }
 
 /* Герой */
@@ -111,6 +114,9 @@ header {
     color: var(--secondary-color);
     background-color: var(--hero-bg-color);
     text-align: center;
+}
+.hero.section{
+    padding: 200px 0;
 }
 .hero-title{
     font-weight: 900;
@@ -153,24 +159,22 @@ header {
 .specifics-list{
     display: flex;
     flex-wrap: wrap;
+    margin-top: calc(-1*var(--list-item-gap));
+    margin-left: calc(-1*var(--list-item-gap));
 }
 .specifics-item{
-     width: 270px;
-     margin-right: 30px;
-}
-.specifics-item:nth-child(4n){
-    margin-right: 0;
+     flex-basis: calc(100%/4 - var(--list-item-gap));
+     margin-top: var(--list-item-gap);
+     margin-left: var(--list-item-gap);
 }
 .specifics-title{
     font-weight: 700;
-    font-size: 14px;
     line-height: 1.14;
     text-transform: uppercase;
     margin-bottom: 10px;
 }
 .specifics-text{
     color: var(--text-color);
-    font-size: 14px;
     line-height: 1.71;
 }
 
@@ -189,12 +193,13 @@ header {
 .work-list{
     display: flex;
     flex-wrap: wrap;
+    margin-top: calc(-1*var(--list-item-gap));
+    margin-left: calc(-1*var(--list-item-gap));
 }
 .work-item{
-    margin-right: 30px;
-}
-.work-item:nth-child(3n){
-    margin-right: 0;
+    flex-basis: calc(100%/3 - var(--list-item-gap));
+    margin-top: var(--list-item-gap);
+    margin-left: var(--list-item-gap);
 }
 
 /*наша команда*/
@@ -212,27 +217,27 @@ header {
 .team-list{
     display: flex;
     flex-wrap: wrap;
+    margin-top: calc(-1*var(--list-item-gap));
+    margin-left: calc(-1*var(--list-item-gap));
 }
 .team-item{
     background-color: var(--secondary-color);
-    margin-right: 30px;
+    flex-basis: calc(100%/4 - var(--list-item-gap));
+    margin-top: var(--list-item-gap);
+    margin-left: var(--list-item-gap);
     box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12),
     0px 1px 1px rgba(0, 0, 0, 0.14),
     0px 2px 1px rgba(0, 0, 0, 0.2);
     border-radius: 0px 0px 4px 4px;
 }
-.team-img{
-    display: block;
-}
-.team-item:nth-child(4n){
-    margin-right: 0;
+.team-text-container{
+    padding: 30px 0;
 }
 .list-title{
     font-weight: 500;
     font-size: 16px;
     line-height: 1.19;
     text-align: center;
-    margin-top: 30px;
     margin-bottom: 10px;
 }
 .list-text {
@@ -240,7 +245,6 @@ header {
     font-size: 16px;
     line-height: 1.19;
     text-align: center;
-    margin-bottom: 30px;
 }
 
 /*Сторінка портфоліо*/
@@ -249,9 +253,6 @@ header {
     display: flex;
     justify-content: center;
     margin-bottom: 50px;
-}
-.filter-item{
-    display: block;
 }
 .filter-item:not(:last-child){
     margin-right: 8px;
@@ -282,23 +283,15 @@ header {
 .project-list{
     display: flex;
     flex-wrap: wrap;
+    margin-top: calc(-1*var(--list-item-gap));
+    margin-left: calc(-1*var(--list-item-gap));
 }
 .project-item{
-    margin-right: 30px;
-    margin-bottom: 30px;
-}
-.project-item:nth-child(3n){
-    margin-right: 0;
-}
-.project-item:nth-last-child(-n+3){
-    margin-bottom: 0;
-}
-.project-img{
-    display: block;
+    flex-basis: calc(100%/3 - var(--list-item-gap));
+    margin-top: var(--list-item-gap);
+    margin-left: var(--list-item-gap);
 }
 .project-text-container {
-    width: 370px;
-    margin: 0 auto;
     padding: 20px 24px;
     border: 1px solid #EEEEEE;
     border-top: 0;
@@ -308,6 +301,7 @@ header {
     font-size: 18px;
     line-height: 2;
     letter-spacing: 0.06em;
+    margin-bottom: 4px;
 }
 .project-text{
     color: var(--text-color);
@@ -319,32 +313,33 @@ header {
 
 .footer {
     background-color: var(--footer-bg-color);
+    padding: 60px 0;
 }
+
 .footer .logo{
     display: block;
     color: var(--secondary-color);
-    padding-top: 60px;
     margin-bottom: 29px;
-    }
+}
+.logo.portfolio{
+    margin-bottom: 20px;
+}
 address{
     font-style: normal;
-    padding-bottom: 60px;
-}    
+}
+.address-item:not(:last-child){
+    margin-bottom: 8px;
+}
+.address-item.portfolio:not(:last-child){
+    margin-bottom: 9px;
+}
 .map-link {
     color: var(--secondary-color);
-    text-decoration: none;
-    font-size: 14px;
     line-height: 1.71;
 }
 .mail-link,
 .tel-link{
-    text-decoration: none;
-    font-size: 14px;
     line-height: 1.71;
     color: var(--footer-contacts-color);
 }
-.map-link:hover,
-.mail-link:hover,
-.tel-link:hover {
-    color: var(--accent-color);
-}
+
