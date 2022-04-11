@@ -81,22 +81,23 @@ header {
 }
 .site-nav{
     display: flex;
-    margin-top: 32px;
-    padding-bottom: 32px;
     margin-left: 50px;
 }
 .nav-item:not(:last-child){
     margin-right: 50px;
 }
 .nav-link{
+    display: block;
     font-weight: 500;
     line-height: 1.14;
     letter-spacing: 0.02em;
+    padding-top: 32px;
+    padding-bottom: 32px;
 }
 .contacts{
     display: flex;
     margin-left: auto;
-        align-items: center;
+    align-items: center;
 }
 
 .contacts-item:not(:last-child){
@@ -159,17 +160,17 @@ header {
 .specifics-list{
     display: flex;
     flex-wrap: wrap;
-    margin-top: calc(-1*var(--list-item-gap));
-    margin-left: calc(-1*var(--list-item-gap));
+    margin-right: calc(-1*var(--list-item-gap));
 }
 .specifics-item{
-     flex-basis: calc(100%/4 - var(--list-item-gap));
-     margin-top: var(--list-item-gap);
-     margin-left: var(--list-item-gap);
+    flex-basis: calc(100%/4 - var(--list-item-gap));
+    margin-right: var(--list-item-gap);
 }
+
 .specifics-title{
     font-weight: 700;
     line-height: 1.14;
+    font-size: 14px;
     text-transform: uppercase;
     margin-bottom: 10px;
 }
@@ -193,13 +194,11 @@ header {
 .work-list{
     display: flex;
     flex-wrap: wrap;
-    margin-top: calc(-1*var(--list-item-gap));
-    margin-left: calc(-1*var(--list-item-gap));
+    margin-right: calc(-1*var(--list-item-gap));
 }
 .work-item{
     flex-basis: calc(100%/3 - var(--list-item-gap));
-    margin-top: var(--list-item-gap);
-    margin-left: var(--list-item-gap);
+    margin-right: var(--list-item-gap);
 }
 
 /*наша команда*/
@@ -217,14 +216,12 @@ header {
 .team-list{
     display: flex;
     flex-wrap: wrap;
-    margin-top: calc(-1*var(--list-item-gap));
-    margin-left: calc(-1*var(--list-item-gap));
+    margin-right: calc(-1*var(--list-item-gap));
 }
 .team-item{
     background-color: var(--secondary-color);
     flex-basis: calc(100%/4 - var(--list-item-gap));
-    margin-top: var(--list-item-gap);
-    margin-left: var(--list-item-gap);
+    margin-right: var(--list-item-gap);
     box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12),
     0px 1px 1px rgba(0, 0, 0, 0.14),
     0px 2px 1px rgba(0, 0, 0, 0.2);
@@ -283,13 +280,14 @@ header {
 .project-list{
     display: flex;
     flex-wrap: wrap;
-    margin-top: calc(-1*var(--list-item-gap));
-    margin-left: calc(-1*var(--list-item-gap));
+    margin-right: calc(-1*var(--list-item-gap));
+    margin-bottom: calc(-1*var(--list-item-gap));
 }
 .project-item{
     flex-basis: calc(100%/3 - var(--list-item-gap));
-    margin-top: var(--list-item-gap);
-    margin-left: var(--list-item-gap);
+    margin-right: var(--list-item-gap);
+    margin-bottom: var(--list-item-gap);
+    max-width: 370px;
 }
 .project-text-container {
     padding: 20px 24px;
